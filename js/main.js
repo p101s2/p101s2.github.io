@@ -6,8 +6,7 @@ var width = Math.max($(window).width()/2 - middlePadding, $(window).width() - mi
 
 
 $(document).ready(function() {
-    // Set responsive css
-    $("#chart").css("left", width + (padding * 2) + 100);
+
 })
 
 

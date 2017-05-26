@@ -10,7 +10,6 @@
 body {
   background: #f8f8f8;
   font-size: 14px;
-  padding-bottom: 20px;
 }
 
 .smallCaps {
@@ -173,6 +172,7 @@ path.ranking {
 #chart {
   position: absolute;
   top: 0;
+  right: 50px;
   width: 500px;
 }
 
@@ -240,7 +240,13 @@ path.ranking {
 }
 
 #footer {
-  margin-left: 50px;
-  margin-top: 50px;
+  padding: 20px 50px;
+  margin-top: 60px;
   font-size: 10px;
+  background: #eee;
+  color: #888;
+}
+
+#footer a {
+  color: #888;
 }
