@@ -4,13 +4,14 @@ var SELECT_WIDTH = 8;
 var NORMAL_OPACITY = 0.1;
 var SELECT_OPACITY = 1;
 var CHART_WIDTH = 500;
+var CUTOFF = 35;
 
 var height = 390;
 var padding = 40;
 var middlePadding = (padding * 2) + 100;
 var width = $(window).width() - middlePadding - CHART_WIDTH - 50;
 
-var episodes = [1, 2, 3, 5, 6];
+var episodes = [1, 2, 3, 5, 6, 8];
 var sortAsc = true;
 var totalData;
 var dFirst;
@@ -74,7 +75,7 @@ function processData(data) {
 }
 
 function isEliminated(d) {
-    return (d.ranking == undefined || d.ranking.length < episodes.length);
+    return (d.ranking == undefined || d.latestRank > CUTOFF);
 }
 
 // Sorts an array of objects by key
@@ -293,6 +294,9 @@ function displayRankChange(change) {
 
 // Returns the change for current contestants, or shows elimination
 function getRankInfo(d) {
+    if (d.specialNote != "") {
+        return d.specialNote;
+    }
     if (d.ranking.length == 0) {
         return "Withdrew from show";
     }
@@ -341,6 +345,7 @@ function parseLine(row) {
     r.name = row.Name;
     r.company = row.Company;
     r.letter = row["Re-Evaluation"];
+    r.specialNote = row.note;
     r.ranking = [];
     episodes.forEach(function(episode, i) {
         var rank = getRank(row["ep" + episode]);
