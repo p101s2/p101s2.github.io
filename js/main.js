@@ -44,7 +44,6 @@ setXAxis();
 // Get data
 d3.csv("produce101.csv", parseLine, function (error, data) {
     totalData = processData(data);
-    console.log(data);
     plotData(data);
     plotData(data);
     // Select first line
@@ -127,7 +126,6 @@ function toggleSort(key) {
 
  function showTop(key, asc) {
     var sortedData = sortByKey(getCurrentContestants(), key, asc);
-    console.log(sortedData);
 
     var top = d3.select("#topBody");
 
