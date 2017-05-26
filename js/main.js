@@ -58,9 +58,9 @@ for (var i = 0; i < episodes.length; i++) {
 
 resetLines();
 
-/*
- GENERAL FUNCTIONS
- --------------------- */
+
+/* GENERAL FUNCTIONS */
+
 
 // Add rank info to data
 function processData(data) {
