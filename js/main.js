@@ -122,6 +122,7 @@ function showChart(key, asc) {
             return td(rank, "smWidth") + td(d.name, "nameWidth") + td(d.company, "companyWidth") + td(letter, "smWidth") + td(displayRankChange(d.rankChange), "rankWidth");
         })
         .on("mouseover", function(d) {
+            console.log(d);
             selectLine(d, "#line" + d.latestRank);
         });
  }
@@ -270,10 +271,10 @@ function getCurrentRank(d) {
     return getLatestRank(d);
 }
 
-// Returns the change in rank, or "" for eliminated contestants
+// Returns the change in rank, or "x" for eliminated contestants
 function getRankChange(d) {
     if (d.isEliminated) {
-        return "";
+        return "-";
     }
     var prevRank = d.ranking[d.ranking.length - 2].rank;
     return prevRank - getCurrentRank(d);
@@ -281,7 +282,7 @@ function getRankChange(d) {
 
 // Returns rank with image according to [change], which must be a number
 function displayRankChange(change) {
-    if (change == "") {
+    if (change == "-") {
         return "-";
     } else if (change > 0) {
         return "<img src='img/up-arrow.png' class='arrow'><span class='change up'>" + change + '<span>';
