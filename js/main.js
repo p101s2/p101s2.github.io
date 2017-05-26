@@ -3,14 +3,6 @@ var padding = 40;
 var middlePadding = (padding * 2) + 100;
 var width = Math.max($(window).width()/2 - middlePadding, $(window).width() - middlePadding - 500 - 50);
 
-
-
-$(document).ready(function() {
-
-})
-
-
-
 var episodes = [1, 2, 3, 5, 6];
 var totalData;
 var currentData;
