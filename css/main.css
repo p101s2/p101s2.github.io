@@ -203,13 +203,13 @@ path.ranking {
   background: #eee;
 }
 
-#top .selectedRow {
-  background: #eee;
-}
-
 #top td {
   padding: 5px 15px;
   border-bottom: 1px solid #ccc;
+}
+
+#top td:hover {
+  background: #eee;
 }
 
 #top th {

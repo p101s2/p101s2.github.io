@@ -129,7 +129,6 @@ function toggleSort(key) {
 // Update chart
 function showChart(key, asc) {
     var sortedData = sortByKey(totalData, key, asc);
-    console.log(sortedData);
 
     var top = d3.select("#topBody");
 
@@ -147,8 +146,6 @@ function showChart(key, asc) {
             return td(rank, "smWidth") + td(d.name, "nameWidth") + td(d.company, "companyWidth") + td(letter, "smWidth") + td(displayRankChange(d.rankChange), "rankWidth");
         })
         .on("mouseover", function(d) {
-            $(".top").removeClass("selectedRow");
-            $(this).addClass("selectedRow");
             selectLine(d, "#line" + d["latestRank"]);
         });
  }
