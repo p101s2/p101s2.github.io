@@ -35,7 +35,7 @@ h1 {
     display: inline-block;
     width: 55%;
     vertical-align: top;
-    height: 570px;
+    height: 600px;
 }
 
 
@@ -144,7 +144,7 @@ path.ranking {
 
     #picWrapper {
         float:left;
-        width: 160px;
+        width: 180px;
         img {
             width: 100%;
         }
@@ -192,14 +192,12 @@ path.ranking {
 #chart {
     position: absolute;
     top: 0;
-    right: 40px;
-    width: 500px;
     width: 500px;
 
     tbody{
         display: block;
         overflow-y: scroll;
-        max-height: 500px;
+        max-height: 540px;
         width: 500px;
     }
 }

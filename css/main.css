@@ -29,7 +29,7 @@ h1 {
   display: inline-block;
   width: 55%;
   vertical-align: top;
-  height: 570px;
+  height: 600px;
 }
 
 /* Top */
@@ -132,7 +132,7 @@ path.ranking {
 
 #profile #picWrapper {
   float: left;
-  width: 160px;
+  width: 180px;
 }
 
 #profile #picWrapper img {
@@ -173,15 +173,13 @@ path.ranking {
 #chart {
   position: absolute;
   top: 0;
-  right: 40px;
-  width: 500px;
   width: 500px;
 }
 
 #chart tbody {
   display: block;
   overflow-y: scroll;
-  max-height: 500px;
+  max-height: 540px;
   width: 500px;
 }
 

@@ -1,6 +1,14 @@
-var height = 370;
-var width = $(window).width()/2 - 100;
+var height = 390;
 var padding = 40;
+var middlePadding = (padding * 2) + 100;
+var width = Math.max($(window).width()/2 - middlePadding, $(window).width() - middlePadding - 500 - 50);
+
+
+
+$(document).ready(function() {
+    // Set responsive css
+    $("#chart").css("left", width + (padding * 2) + 100);
+})
 
 
 
