@@ -296,7 +296,7 @@ function displayRankChange(d) {
     } else if (d.rankChange < 0) {
         return "<img src='img/down-arrow.png' class='arrow'><span class='change down'>" + Math.abs(d.rankChange) + '<span>';
     } else {
-        return "<span class='change'>0</span>";
+        return "<img src='img/neutral-arrow.png' class='arrow'><span class='change'>0</span>";
     }
 }
 
