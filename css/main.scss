@@ -28,12 +28,14 @@ body {
 
 h1 {
     margin-bottom: 20px;
+    font-size: 24px;
 }
 
 #graph{
     display: inline-block;
     width: 55%;
     vertical-align: top;
+    height: 570px;
 }
 
 
@@ -136,13 +138,13 @@ path.ranking {
 /* Info */
 
 #profile {
-    margin-top: -10px;
+    margin-top: -20px;
     margin-left: 40px;
-    height: 180px;
+    height: 160px;
 
     #picWrapper {
         float:left;
-        width: 180px;
+        width: 160px;
         img {
             width: 100%;
         }
@@ -152,7 +154,7 @@ path.ranking {
         display: inline-block;
         vertical-align: top;
         margin-left: 40px;
-        padding-top: 50px;
+        padding-top: 40px;
 
         #infoName {
             font-size: 20px;
@@ -188,9 +190,11 @@ path.ranking {
 /* Ranking table */
 
 #chart {
-    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 40px;
     width: 500px;
-    vertical-align: top;
+    width: 500px;
 
     tbody{
         display: block;
@@ -235,10 +239,6 @@ path.ranking {
         &:hover {
             color: black;
         }
-    }
-
-    td, th {
-        width: 60px;
     }
 
     #currentRank, #letter, #rankChange, .smWidth{
