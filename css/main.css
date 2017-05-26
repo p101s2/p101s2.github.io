@@ -26,8 +26,7 @@ h1 {
 
 /* Top */
 #banner {
-  background: url("../img/banner.png");
-  background-size: cover;
+  background: url("../img/banner.png") center center;
   height: 220px;
   box-sizing: border-box;
   position: relative;
