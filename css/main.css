@@ -1,0 +1,197 @@
+/*General*/
+* {
+  font-family: "Open Sans";
+  margin: 0;
+  padding: 0;
+  background: none;
+  outline: none;
+}
+
+body {
+  background: #f8f8f8;
+  font-size: 14px;
+  padding-bottom: 50px;
+}
+
+.smallCaps {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  color: #888;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Top */
+#banner {
+  background: url("../img/banner.png");
+  background-size: cover;
+  height: 220px;
+  box-sizing: border-box;
+  position: relative;
+  top: -25px;
+  text-align: center;
+  padding-top: 60px;
+  margin-bottom: 50px;
+}
+
+#banner img {
+  max-height: 120px;
+}
+
+#mainWrapper {
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+}
+
+/* Misc */
+img.arrow {
+  height: 10px;
+  margin-left: 5px;
+}
+
+.letter {
+  border-radius: 100%;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  padding-top: 4px;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.change {
+  padding-left: 3px;
+  font-weight: bold;
+}
+
+.change.up {
+  color: #00a500;
+}
+
+.change.down {
+  color: #d60a2a;
+}
+
+/* Graph */
+.axis path {
+  fill: none;
+  stroke: black;
+}
+
+.axis line {
+  stroke: black;
+}
+
+path.ranking {
+  fill: none;
+  cursor: pointer;
+}
+
+.note {
+  background: black;
+  color: white;
+  display: inline-block;
+  position: absolute;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 8px 0;
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.episodeLabel {
+  fill: #888;
+  text-anchor: middle;
+}
+
+/* Info */
+#profile {
+  position: absolute;
+  top: 30px;
+  width: 250px;
+  left: 780px;
+  background: white;
+  box-shadow: 0px 1px 10px #bbb;
+}
+
+#profile #picWrapper img {
+  width: 100%;
+}
+
+#profile #textWrapper {
+  margin: 15px 0 15px;
+  text-align: center;
+}
+
+#profile #textWrapper #infoName {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#profile #textWrapper #infoLetter {
+  top: -3px;
+}
+
+#profile #textWrapper #infoCompany {
+  margin: 5px 0 8px;
+}
+
+.pie .arc text {
+  text-anchor: middle;
+  fill: #fff;
+}
+
+.pie .arc path {
+  stroke: #f8f8f8;
+  stroke-width: 3px;
+}
+
+/* Ranking table */
+#top {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+#top .selectedSort {
+  color: #000;
+}
+
+#top #topBody tr {
+  cursor: pointer;
+}
+
+#top #topBody tr:hover {
+  background: #eee;
+}
+
+#top .selectedRow {
+  background: #eee;
+}
+
+#top td {
+  padding: 5px 25px;
+  border-bottom: 1px solid #ccc;
+}
+
+#top th {
+  cursor: pointer;
+  text-align: left;
+  border-bottom: 2px solid #ccc;
+  padding: 10px 20px !important;
+}
+
+#top th:hover {
+  color: black;
+}
