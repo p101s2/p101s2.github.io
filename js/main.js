@@ -1,5 +1,5 @@
-var height = 500;
-var width = 700;
+var height = 400;
+var width = 600;
 var padding = 40;
 
 var episodes = [1, 2, 3, 5, 6];
@@ -61,7 +61,7 @@ var pathGenerator = d3.line()
 
 // Set notes
 for (var i = 0; i < episodes.length; i++) {
-    $("#note" + i).css("left", scaleX(i) + OFFSET).hide();
+    $("#note" + i).css("left", scaleX(i) + OFFSET + 40).hide();
 }
 
 resetLines();
@@ -132,17 +132,17 @@ function showTop(key, asc) {
         .attr("class", "top")
         .html(function(d) {
             var letter = '<div class="letter" style="background: ' + getColor(d) + '; color: ' + getTextColor(d) + '">' + d.letter + '</div>';
-            return td(d["latestRank"]) + td(d.name) + td(d.company) + td(letter) + td(displayRankChange(d.rankChange));
+            return td(d["latestRank"], "smWidth") + td(d.name, "nameWidth") + td(d.company, "companyWidth") + td(letter, "smWidth") + td(displayRankChange(d.rankChange), "rankWidth");
         })
-        .on("click", function(d) {
+        .on("mouseover", function(d) {
             $(".top").removeClass("selectedRow");
             $(this).addClass("selectedRow");
             selectLine(d, "#line" + d["latestRank"]);
         });
  }
 
- function td(str) {
-     return "<td>" + str + "</td>";
+ function td(str, cl) {
+     return "<td class='" + cl + "'>" + str + "</td>";
  }
 
  function setXAxis() {
@@ -210,7 +210,7 @@ function selectLine(d, lineId) {
     // Update box
     displayProfile(d);
     $("#profile").show();
-    $("#profile").css("top", getInfoTop(d));
+    // $("#profile").css("top", getInfoTop(d));
 }
 
 

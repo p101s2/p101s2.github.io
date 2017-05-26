@@ -18,43 +18,47 @@
 
     <div id="mainWrapper">
 
-        <!-- Profile -->
-        <div id="profile">
-            <div id="picWrapper">
-                <img src="#" id="pic">
+        <div id="graph">
+            <!-- Line Graph -->
+            <div id="plot">
+                <div class="note" id="note0"></div>
+                <div class="note" id="note1"></div>
+                <div class="note" id="note2"></div>
+                <div class="note" id="note3"></div>
+                <div class="note" id="note4"></div>
             </div>
-            <div id="textWrapper">
-                <span id="infoName"></span>
-                <span id="infoLetter" class="letter"></span>
-                <div id="infoCompany" class="smallCaps"></div>
-                <div id="infoRank"></div>
-            </div>
-        </div>
 
-        <!-- Line Graph -->
-        <div id="plot">
-            <div class="note" id="note0"></div>
-            <div class="note" id="note1"></div>
-            <div class="note" id="note2"></div>
-            <div class="note" id="note3"></div>
-            <div class="note" id="note4"></div>
+            <!-- Profile -->
+            <div id="profile">
+                <div id="picWrapper">
+                    <img src="#" id="pic">
+                </div>
+                <div id="textWrapper">
+                    <span id="infoName"></span>
+                    <span id="infoLetter" class="letter"></span>
+                    <div id="infoCompany" class="smallCaps"></div>
+                    <div id="infoRank"></div>
+                </div>
+            </div>
         </div>
 
         <!-- Top 11 -->
-        <h1>Current Rankings</h1>
-        <table id="top">
-            <thead>
-                <tr class="smallCaps">
-                    <th onclick="toggleSort('currentRank')" id="currentRank" class="selectedSort">Rank</th>
-                    <th onclick="toggleSort('name')" id="name">Name</th>
-                    <th onclick="toggleSort('company')" id="company">Company</th>
-                    <th onclick="toggleSort('letter')" id="letter">Class</th>
-                    <th onclick="toggleSort('rankChange')" id="rankChange">Rank Change</th>
-                </tr>
-            </thead>
-            <tbody id="topBody">
-            </tbody>
-        </table>
+        <div id="chart">
+            <h1>Current Rankings</h1>
+            <table id="top">
+                <thead>
+                    <tr class="smallCaps">
+                        <th onclick="toggleSort('currentRank')" id="currentRank" class="selectedSort">Rank</th>
+                        <th onclick="toggleSort('name')" id="name">Name</th>
+                        <th onclick="toggleSort('company')" id="company">Company</th>
+                        <th onclick="toggleSort('letter')" id="letter">Class</th>
+                        <th onclick="toggleSort('rankChange')" id="rankChange">Change</th>
+                    </tr>
+                </thead>
+                <tbody id="topBody">
+                </tbody>
+            </table>
+        </div>
 
         <!-- Pie graphs -->
         <!-- <svg id="pie" class="pie"></svg>

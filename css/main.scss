@@ -30,6 +30,15 @@ h1 {
     margin-bottom: 20px;
 }
 
+#graph{
+    display: inline-block;
+    width: 55%;
+    vertical-align: top;
+}
+
+
+
+
 /* Top */
 
 #banner {
@@ -48,7 +57,7 @@ h1 {
 }
 
 #mainWrapper {
-    max-width: 1100px;
+    padding: 0 40px;
     margin: auto;
     position: relative;
 }
@@ -127,21 +136,21 @@ path.ranking {
 /* Info */
 
 #profile {
-    position: absolute;
-    top: 30px;
-    width: 250px;
-    left: 780px;
-    background: white;
-    box-shadow: 0px 1px 10px #bbb;
+    margin-top: -10px;
+    margin-left: 40px;
 
     #picWrapper {
+        float:left;
+        width: 200px;
         img {
             width: 100%;
         }
     }
 
     #textWrapper {
-        margin: 15px 0 15px;
+        max-width: 300px;
+        margin-left: 200px;
+        padding-top: 50px;
         text-align: center;
 
         #infoName {
@@ -177,9 +186,24 @@ path.ranking {
 
 /* Ranking table */
 
+#chart {
+    display: inline-block;
+    width: 500px;
+    vertical-align: top;
+
+    tbody{
+        display: block;
+        overflow-y: scroll;
+        max-height: 600px;
+        width: 580px;
+    }
+}
+
 #top {
     border-spacing: 0;
     border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
 
     .selectedSort {
         color: #000;
@@ -196,7 +220,7 @@ path.ranking {
     }
 
     td {
-        padding: 5px 25px;
+        padding: 5px 15px;
         border-bottom: 1px solid #ccc;
     }
 
@@ -204,11 +228,28 @@ path.ranking {
         cursor: pointer;
         text-align: left;
         border-bottom: 2px solid #ccc;
-        padding: 10px 20px!important;
+        padding: 10px 15px!important;
 
         &:hover {
             color: black;
         }
+    }
+
+    td, th {
+        width: 60px;
+    }
+
+    #currentRank, #letter, #rankChange, .smWidth{
+        width: 20px;
+    }
+    #rankChange, .rankWidth {
+        width: 40px;
+    }
+    #name, .nameWidth{
+        width: 150px;
+    }
+    #company, .companyWidth{
+        width: 200px;
     }
 
 }
