@@ -12,7 +12,6 @@ var middlePadding = (padding * 2) + 100;
 var width = $(window).width() - middlePadding - CHART_WIDTH - 50;
 
 var episodes = [1, 2, 3, 5, 6, 8];
-var sortAsc = true;
 var totalData;
 var dFirst;
 
@@ -83,6 +82,12 @@ function sortByKey(array, key, asc) {
     return array.sort(function(a, b) {
         var x = a[key]; var y = b[key];
         if (asc) {
+            if (x == "-") {
+                return 1;
+            }
+            if (y == "-") {
+                return -1;
+            }
             return ((x < y) ? -1 : ((x > y) ? 1 : 0));
         }
         return ((x < y) ? 1 : ((x > y) ? -1 : 0));
@@ -119,10 +124,9 @@ function showChart(key, asc) {
             if (rank == 1000) {
                 rank = "-";
             }
-            return td(rank, "smWidth") + td(d.name, "nameWidth") + td(d.company, "companyWidth") + td(letter, "smWidth") + td(displayRankChange(d.rankChange), "rankWidth");
+            return td(rank, "smWidth") + td(d.name, "nameWidth") + td(d.company, "companyWidth") + td(letter, "smWidth") + td(displayRankChange(d), "rankWidth");
         })
         .on("mouseover", function(d) {
-            console.log(d);
             selectLine(d, "#line" + d.latestRank);
         });
  }
@@ -231,6 +235,9 @@ function plotData(data) {
             if (d.latestRank == 1) {
                 dFirst = d;
             }
+            if (d.specialNote != "") { // Special Line
+                return "sline" + d.latestRank;
+            }
             return "line" + d.latestRank;
         })
         .attr("d", function(d, i) {
@@ -265,15 +272,15 @@ function getLatestRank(d) {
 
 // Returns the rank for current contestants, and -1 for all those eliminated
 function getCurrentRank(d) {
-    if (d.isEliminated) {
+    if (d.ranking.length < episodes.length) {
         return -1;
     }
     return getLatestRank(d);
 }
 
-// Returns the change in rank, or "x" for eliminated contestants
+// Returns the change in rank, or "-" for eliminated contestants
 function getRankChange(d) {
-    if (d.isEliminated) {
+    if (d.ranking.length < episodes.length) {
         return "-";
     }
     var prevRank = d.ranking[d.ranking.length - 2].rank;
@@ -281,13 +288,13 @@ function getRankChange(d) {
 }
 
 // Returns rank with image according to [change], which must be a number
-function displayRankChange(change) {
-    if (change == "-") {
+function displayRankChange(d) {
+    if (d.rankChange == "-") {
         return "-";
-    } else if (change > 0) {
-        return "<img src='img/up-arrow.png' class='arrow'><span class='change up'>" + change + '<span>';
-    } else if (change < 0) {
-        return "<img src='img/down-arrow.png' class='arrow'><span class='change down'>" + Math.abs(change) + '<span>';
+    } else if (d.rankChange > 0) {
+        return "<img src='img/up-arrow.png' class='arrow'><span class='change up'>" + d.rankChange + '<span>';
+    } else if (d.rankChange < 0) {
+        return "<img src='img/down-arrow.png' class='arrow'><span class='change down'>" + Math.abs(d.rankChange) + '<span>';
     } else {
         return "<span class='change'>0</span>";
     }
@@ -304,7 +311,7 @@ function getRankInfo(d) {
     if (d.isEliminated) {
         return "Eliminated in Episode " + episodes[d.ranking.length - 1];
     }
-    return "Rank " + d.currentRank + " " + displayRankChange(d.rankChange);
+    return "Rank " + d.currentRank + " " + displayRankChange(d);
 }
 
 function updateNotes(d) {
