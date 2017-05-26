@@ -45,8 +45,6 @@ setXAxis();
 d3.csv("produce101.csv", parseLine, function (error, data) {
     totalData = processData(data);
     plotData(data);
-    plotData(data);
-    // Select first line
     selectLine(dFirst, "#line1");
 
     // drawPie("#pie", getPieData(100));
@@ -67,8 +65,6 @@ for (var i = 0; i < episodes.length; i++) {
 }
 
 resetLines();
-
-
 
 /*
  GENERAL FUNCTIONS
@@ -109,7 +105,6 @@ function sortByKey(array, key, asc) {
     });
 }
 
-var sortKey = "currentRank";
 var sortAsc = true;
 
 function toggleSort(key) {
@@ -124,7 +119,8 @@ function toggleSort(key) {
     showTop(key, sortAsc);
 }
 
- function showTop(key, asc) {
+// Update chart
+function showTop(key, asc) {
     var sortedData = sortByKey(getCurrentContestants(), key, asc);
 
     var top = d3.select("#topBody");
@@ -143,8 +139,6 @@ function toggleSort(key) {
             $(this).addClass("selectedRow");
             selectLine(d, "#line" + d["latestRank"]);
         });
-
-
  }
 
  function td(str) {
@@ -179,7 +173,6 @@ function displayProfile(d) {
     $("#infoCompany").text(d["company"]);
     $("#infoRank").html(getRankInfo(d));
 }
-
 
 function getImageSource(d) {
     return "pics/" + d["name"].replace(/ /g, "") + ".jpg";
@@ -240,14 +233,14 @@ function plotData(data) {
 
     var paths = plot.selectAll("path.ranking").data(data);
 
-    paths.enter().append("path")
-    .attr("class", "ranking")
+
 
     var pathGenerator = d3.line()
     .x(function (d) { return scaleX(d.x); })
     .y(function (d) { return scaleY(d.rank); });
 
-    paths
+    paths.enter().append("path")
+        .attr("class", "ranking")
         .attr("id", function(d) {
             if (d["latestRank"] == 1) {
                 dFirst = d;
@@ -273,8 +266,6 @@ function plotData(data) {
         });
 
     paths.exit().remove();
-
-
 }
 
 // Returns the latest rank for every contestant, and -1 for those never ranked
@@ -317,16 +308,10 @@ function displayRankChange(change) {
 
 // Returns the change for current contestants, or shows elimination
 function getRankInfo(d) {
-    var ranking = d.ranking[d.ranking.length - 1];
-    if (ranking == undefined) {
-        return 0;
-    }
-    if (d.ranking.length < episodes.length) {
+    if (isEliminated(d)) {
         return "Eliminated in Episode " + episodes[d.ranking.length - 1];
     }
-
-    var rankString = displayRankChange(getRankChange(d));
-    return "Rank " + ranking.rank + " " + rankString;
+    return "Rank " + d["currentRank"] + " " + displayRankChange(getRankChange(d));
 }
 
 function getInfoTop(d) {
@@ -483,29 +468,4 @@ function drawPie(id, data) {
 
 function translate(x, y) {
     return "translate(" + x + "," + y + ")";
-}
-
-function selectAll() {
-
-}
-
-// Get all data for top n contestants
-function getData(n) {
-    var newData = [];
-    totalData.forEach(function(d) {
-        if (d.ranking != undefined && d["latestRank"] <= n) {
-            newData.push(d);
-        }
-    });
-    return newData;
-}
-
-function select60() {
-    plotData(getData(60));
-    selectLine(dFirst, "#line1");
-}
-
-function select11() {
-    plotData(getData(11));
-    selectLine(dFirst, "#line1");
 }
