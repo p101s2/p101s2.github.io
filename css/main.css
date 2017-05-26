@@ -176,8 +176,8 @@ path.ranking {
 #chart tbody {
   display: block;
   overflow-y: scroll;
-  max-height: 600px;
-  width: 580px;
+  max-height: 500px;
+  width: 500px;
 }
 
 #top {
@@ -185,6 +185,7 @@ path.ranking {
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
+  font-size: 13px;
 }
 
 #top .selectedSort {
@@ -232,11 +233,11 @@ path.ranking {
 }
 
 #top #name, #top .nameWidth {
-  width: 150px;
+  width: 120px;
 }
 
 #top #company, #top .companyWidth {
-  width: 200px;
+  width: 150px;
 }
 
 #footer {

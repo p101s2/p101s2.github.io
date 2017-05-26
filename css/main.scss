@@ -194,8 +194,8 @@ path.ranking {
     tbody{
         display: block;
         overflow-y: scroll;
-        max-height: 600px;
-        width: 580px;
+        max-height: 500px;
+        width: 500px;
     }
 }
 
@@ -204,6 +204,7 @@ path.ranking {
     border-collapse: collapse;
     table-layout: fixed;
     width: 100%;
+    font-size: 13px;
 
     .selectedSort {
         color: #000;
@@ -246,10 +247,10 @@ path.ranking {
         width: 40px;
     }
     #name, .nameWidth{
-        width: 150px;
+        width: 120px;
     }
     #company, .companyWidth{
-        width: 200px;
+        width: 150px;
     }
 
 }

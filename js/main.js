@@ -1,5 +1,5 @@
-var height = 400;
-var width = 600;
+var height = 350;
+var width = 500;
 var padding = 40;
 
 var episodes = [1, 2, 3, 5, 6];
