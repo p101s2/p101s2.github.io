@@ -10,7 +10,7 @@
 body {
   background: #f8f8f8;
   font-size: 14px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 .smallCaps {
@@ -34,7 +34,7 @@ h1 {
   top: -25px;
   text-align: center;
   padding-top: 60px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 #banner img {
@@ -194,4 +194,9 @@ path.ranking {
 
 #top th:hover {
   color: black;
+}
+
+#footer {
+  margin-top: 50px;
+  font-size: 10px;
 }
