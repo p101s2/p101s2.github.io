@@ -38,13 +38,11 @@ h1 {
 }
 
 
-
-
 /* Top */
 
 #banner {
-    background: url("../img/banner.png") center center;
-    height: 220px;
+    background: $blue url("../img/banner.png") center center;
+    height: 200px;
     box-sizing: border-box;
     position: relative;
     top: -25px;
