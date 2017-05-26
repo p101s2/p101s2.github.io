@@ -58,9 +58,7 @@ d3.csv("produce101.csv", parseLine, function (error, data) {
 
     // drawPie("#pie", getPieData(100));
     // drawPie("#pie60", getPieData(60));
-
-    var currentData = getCurrentContestants();
-    showTop("currentRank", true);
+    showChart("latestRank", true);
 });
 
 // Path generator
@@ -125,12 +123,13 @@ function toggleSort(key) {
         sortKey = key
         sortAsc = true;
     }
-    showTop(key, sortAsc);
+    showChart(key, sortAsc);
 }
 
 // Update chart
-function showTop(key, asc) {
-    var sortedData = sortByKey(getCurrentContestants(), key, asc);
+function showChart(key, asc) {
+    var sortedData = sortByKey(totalData, key, asc);
+    console.log(sortedData);
 
     var top = d3.select("#topBody");
 
@@ -141,7 +140,11 @@ function showTop(key, asc) {
         .attr("class", "top")
         .html(function(d) {
             var letter = '<div class="letter" style="background: ' + getColor(d) + '; color: ' + getTextColor(d) + '">' + d.letter + '</div>';
-            return td(d["latestRank"], "smWidth") + td(d.name, "nameWidth") + td(d.company, "companyWidth") + td(letter, "smWidth") + td(displayRankChange(d.rankChange), "rankWidth");
+            var rank = d["latestRank"];
+            if (rank == 1000) {
+                rank = "-";
+            }
+            return td(rank, "smWidth") + td(d.name, "nameWidth") + td(d.company, "companyWidth") + td(letter, "smWidth") + td(displayRankChange(d.rankChange), "rankWidth");
         })
         .on("mouseover", function(d) {
             $(".top").removeClass("selectedRow");
@@ -281,14 +284,14 @@ function plotData(data) {
 function getLatestRank(d) {
     var ranking = d.ranking[d.ranking.length - 1];
     if (ranking == undefined) {
-        return -1;
+        return 1000;
     }
     return ranking.rank;
 }
 
 // Returns the rank for current contestants, and -1 for all those eliminated
 function getCurrentRank(d) {
-    if (isEliminated(d)) {
+    if (d.isEliminated) {
         return -1;
     }
     return getLatestRank(d);
@@ -305,22 +308,28 @@ function getRankChange(d) {
 
 // Returns rank with image according to [change], which must be a number
 function displayRankChange(change) {
-    if (change > 0) {
+    if (change == "") {
+        return "-";
+    } else if (change > 0) {
         return "<img src='img/up-arrow.png' class='arrow'><span class='change up'>" + change + '<span>';
     } else if (change < 0) {
         return "<img src='img/down-arrow.png' class='arrow'><span class='change down'>" + Math.abs(change) + '<span>';
     } else {
         return "<span class='change'>0</span>";
     }
-    return
 }
+
+
 
 // Returns the change for current contestants, or shows elimination
 function getRankInfo(d) {
+    if (d.ranking.length == 0) {
+        return "Withdrew from show";
+    }
     if (isEliminated(d)) {
         return "Eliminated in Episode " + episodes[d.ranking.length - 1];
     }
-    return "Rank " + d["currentRank"] + " " + displayRankChange(getRankChange(d));
+    return "Rank " + d.currentRank + " " + displayRankChange(d.rankChange);
 }
 
 function getInfoTop(d) {

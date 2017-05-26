@@ -223,7 +223,7 @@ path.ranking {
   color: black;
 }
 
-#top #currentRank, #top #letter, #top #rankChange, #top .smWidth {
+#top #latestRank, #top #letter, #top #rankChange, #top .smWidth {
   width: 20px;
 }
 
