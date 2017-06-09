@@ -1,3 +1,5 @@
+"use strict";
+
 var OFFSET = 23;
 var NORMAL_WIDTH = 6;
 var SELECT_WIDTH = 8;
@@ -11,7 +13,7 @@ var padding = 40;
 var middlePadding = (padding * 2) + 100;
 var width = $(window).width() - middlePadding - CHART_WIDTH - 50;
 
-var episodes = [1, 2, 3, 5, 6, 8];
+var episodes = [1, 2, 3, 5, 6, 8, 10];
 var totalData;
 var dFirst;
 
@@ -21,35 +23,32 @@ var colors = {
     "C": "#fff200",
     "D": "#00a500",
     "F": "gray"
-}
+};
 
 // Set up plot
 var svg = d3.select("#plot").append("svg")
-.attr("class", "axis")
-.attr("height", height + padding * 2)
-.attr("width", width + padding * 2);
+    .attr("class", "axis")
+    .attr("height", height + padding * 2)
+    .attr("width", width + padding * 2);
 
-var scaleX = d3.scaleLinear().domain([0, episodes.length-1]).range([0, width]);
+var scaleX = d3.scaleLinear().domain([0, episodes.length - 1]).range([0, width]);
 var scaleY = d3.scaleLinear().domain([0, 99]).range([0, height]);
 var plot = svg.append("g").attr("transform", "translate(" + padding + "," + padding + ")");
 
 setXAxis();
 
 // Get data
-d3.csv("produce101.csv", parseLine, function (error, data) {
+d3.csv("produce101.csv", parseLine, function (err, data) {
     totalData = processData(data);
     plotData(data);
     selectLine(dFirst, "#line1");
-
-    // drawPie("#pie", getPieData(100));
-    // drawPie("#pie60", getPieData(60));
     showChart("latestRank", true);
 });
 
 // Path generator
 var pathGenerator = d3.line()
-.x(function (d) { return scaleX(d.x); })
-.y(function (d) { return scaleY(d.rank); });
+    .x(function (d) { return scaleX(d.x); })
+    .y(function (d) { return scaleY(d.rank); });
 
 // Set notes
 for (var i = 0; i < episodes.length; i++) {
@@ -59,8 +58,22 @@ for (var i = 0; i < episodes.length; i++) {
 resetLines();
 
 
-/* GENERAL FUNCTIONS */
+function setXAxis() {
+    episodes.forEach(function (episode, i) {
+        // Add episode label
+        plot.append("text")
+            .text("Episode " + episode)
+            .attr("x", scaleX(i))
+            .attr("y", -20)
+            .attr("class", "episodeLabel smallCaps");
 
+        // Add gridline
+        plot.append("path")
+            .attr("d", "M" + scaleX(i) + "," + scaleY(0) + "L" + scaleX(i) + "," + scaleY(99))
+            .style("opacity", "0.1")
+            .style("stroke-width", 3);
+    });
+}
 
 // Add rank info to data
 function processData(data) {
@@ -135,22 +148,7 @@ function showChart(key, asc) {
      return "<td class='" + cl + "'>" + str + "</td>";
  }
 
- function setXAxis() {
-     episodes.forEach(function(episode,i) {
-         // Add episode label
-         plot.append("text")
-            .text("Episode " + episode)
-            .attr("x", scaleX(i) )
-            .attr("y", -20)
-            .attr("class", "episodeLabel smallCaps");
 
-        // Add gridline
-        plot.append("path")
-            .attr("d", "M" + scaleX(i) + "," + scaleY(0) + "L" + scaleX(i) + "," + scaleY(99))
-            .style("opacity", "0.1")
-            .style("stroke-width", 3);
-     });
- }
 
 // Displays profile
 function displayProfile(d) {
