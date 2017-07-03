@@ -4,32 +4,27 @@
   margin: 0;
   padding: 0;
   background: none;
-  outline: none;
-}
+  outline: none; }
 
 body {
   background: #f8f8f8;
-  font-size: 14px;
-}
+  font-size: 14px; }
 
 .smallCaps {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
-  color: #888;
-}
+  color: #888; }
 
 h1 {
   margin-bottom: 20px;
-  font-size: 24px;
-}
+  font-size: 24px; }
 
 #graph {
   display: inline-block;
   width: 55%;
   vertical-align: top;
-  height: 600px;
-}
+  height: 600px; }
 
 /* Top */
 #banner {
@@ -40,24 +35,19 @@ h1 {
   top: -25px;
   text-align: center;
   padding-top: 60px;
-  margin-bottom: 30px;
-}
-
-#banner img {
-  max-height: 120px;
-}
+  margin-bottom: 30px; }
+  #banner img {
+    max-height: 120px; }
 
 #mainWrapper {
   padding: 0 40px;
   margin: auto;
-  position: relative;
-}
+  position: relative; }
 
 /* Misc */
 img.arrow {
   height: 10px;
-  margin-left: 5px;
-}
+  margin-left: 5px; }
 
 .letter {
   border-radius: 100%;
@@ -70,36 +60,27 @@ img.arrow {
   display: inline-block;
   margin-left: 5px;
   font-size: 14px;
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 .change {
   padding-left: 3px;
-  font-weight: bold;
-}
-
-.change.up {
-  color: #00a500;
-}
-
-.change.down {
-  color: #d60a2a;
-}
+  font-weight: bold; }
+  .change.up {
+    color: #00a500; }
+  .change.down {
+    color: #d60a2a; }
 
 /* Graph */
 .axis path {
   fill: none;
-  stroke: black;
-}
+  stroke: black; }
 
 .axis line {
-  stroke: black;
-}
+  stroke: black; }
 
 path.ranking {
   fill: none;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .note {
   background: black;
@@ -114,139 +95,94 @@ path.ranking {
   height: 36px;
   border-radius: 100%;
   font-size: 14px;
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 .episodeLabel {
   fill: #888;
-  text-anchor: middle;
-}
+  text-anchor: middle; }
 
 /* Info */
 #profile {
   margin-top: -20px;
   margin-left: 40px;
-  height: 160px;
-}
-
-#profile #picWrapper {
-  float: left;
-  width: 180px;
-}
-
-#profile #picWrapper img {
-  width: 100%;
-}
-
-#profile #textWrapper {
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 40px;
-  padding-top: 40px;
-}
-
-#profile #textWrapper #infoName {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-#profile #textWrapper #infoLetter {
-  top: -3px;
-}
-
-#profile #textWrapper #infoCompany {
-  margin: 5px 0 8px;
-}
+  height: 160px; }
+  #profile #picWrapper {
+    float: left;
+    width: 180px; }
+    #profile #picWrapper img {
+      width: 100%; }
+  #profile #textWrapper {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 40px;
+    padding-top: 40px; }
+    #profile #textWrapper #infoName {
+      font-size: 20px;
+      font-weight: 700; }
+    #profile #textWrapper #infoLetter {
+      top: -3px; }
+    #profile #textWrapper #infoCompany {
+      margin: 5px 0 8px; }
 
 .pie .arc text {
   text-anchor: middle;
-  fill: #fff;
-}
-
+  fill: #fff; }
 .pie .arc path {
   stroke: #f8f8f8;
-  stroke-width: 3px;
-}
+  stroke-width: 3px; }
 
 /* Ranking table */
 #chart {
   position: absolute;
   top: 0;
   right: 50px;
-  width: 500px;
-}
-
-#chart tbody {
-  display: block;
-  overflow-y: scroll;
-  max-height: 540px;
-  width: 500px;
-}
+  width: 500px; }
+  #chart tbody {
+    display: block;
+    overflow-y: scroll;
+    max-height: 540px;
+    width: 500px; }
 
 #top {
   border-spacing: 0;
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
-  font-size: 13px;
-}
-
-#top .selectedSort {
-  color: #000;
-}
-
-#top #topBody tr {
-  cursor: pointer;
-}
-
-#top #topBody tr:hover {
-  background: #eee;
-}
-
-#top td {
-  padding: 5px 15px;
-  border-bottom: 1px solid #ccc;
-}
-
-#top td:hover {
-  background: #eee;
-}
-
-#top th {
-  cursor: pointer;
-  text-align: left;
-  border-bottom: 2px solid #ccc;
-  padding: 10px 15px !important;
-}
-
-#top th:hover {
-  color: black;
-}
-
-#top #latestRank, #top #letter, #top #rankChange, #top .smWidth {
-  width: 20px;
-}
-
-#top #rankChange, #top .rankWidth {
-  width: 40px;
-}
-
-#top #name, #top .nameWidth {
-  width: 120px;
-}
-
-#top #company, #top .companyWidth {
-  width: 150px;
-}
+  font-size: 13px; }
+  #top .selectedSort {
+    color: #000; }
+  #top #topBody tr {
+    cursor: pointer; }
+    #top #topBody tr:hover {
+      background: #e6e6e6 !important; }
+    #top #topBody tr.wanna-members {
+      background: #eee; }
+  #top td {
+    padding: 5px 15px;
+    border-bottom: 1px solid #ccc; }
+  #top th {
+    cursor: pointer;
+    text-align: left;
+    border-bottom: 2px solid #ccc;
+    padding: 10px 15px !important; }
+    #top th:hover {
+      color: black; }
+  #top #latestRank, #top #letter, #top #rankChange, #top .smWidth {
+    width: 20px; }
+  #top #rankChange, #top .rankWidth {
+    width: 40px; }
+  #top #name, #top .nameWidth {
+    width: 120px; }
+  #top #company, #top .companyWidth {
+    width: 150px; }
 
 #footer {
   padding: 20px 50px;
   margin-top: 60px;
   font-size: 10px;
   background: #eee;
-  color: #888;
-}
+  color: #888; }
+  #footer a {
+    color: #888; }
 
-#footer a {
-  color: #888;
-}
+/*# sourceMappingURL=main.css.map */

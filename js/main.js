@@ -6,14 +6,14 @@ var SELECT_WIDTH = 8;
 var NORMAL_OPACITY = 0.1;
 var SELECT_OPACITY = 1;
 var CHART_WIDTH = 500;
-var CUTOFF = 35;
+var CUTOFF = 11; // Update cutoff
 
 var height = 390;
 var padding = 40;
 var middlePadding = (padding * 2) + 100;
-var width = $(window).width() - middlePadding - CHART_WIDTH - 50;
+var width = $(window).width() - middlePadding - CHART_WIDTH - 30;
 
-var episodes = [1, 2, 3, 5, 6, 8, 10];
+var episodes = [1, 2, 3, 5, 6, 8, 10, 11];
 var totalData;
 var dFirst;
 
@@ -62,7 +62,7 @@ function setXAxis() {
     episodes.forEach(function (episode, i) {
         // Add episode label
         plot.append("text")
-            .text("Episode " + episode)
+            .text("Ep " + episode)
             .attr("x", scaleX(i))
             .attr("y", -20)
             .attr("class", "episodeLabel smallCaps");
@@ -130,7 +130,13 @@ function showChart(key, asc) {
     var topDivs = top.selectAll("tr.top").data(sortedData);
 
     topDivs.enter().append("tr")
-        .attr("class", "top")
+        .attr("class", function(d) {
+            if (d.isEliminated) {
+                return "top";
+            } else {
+                return "top wanna-members";
+            }
+        })
         .html(function(d) {
             var letter = '<div class="letter" style="background: ' + getBackground(d) + '; color: ' + getTextColor(d) + '">' + d.letter + '</div>';
             var rank = d.latestRank;
@@ -309,7 +315,7 @@ function getRankInfo(d) {
     if (d.isEliminated) {
         return "Eliminated in Episode " + episodes[d.ranking.length - 1];
     }
-    return "Rank " + d.currentRank + " " + displayRankChange(d);
+    return "Wanna One Member, Rank " + d.currentRank + " " + displayRankChange(d);
 }
 
 function updateNotes(d) {

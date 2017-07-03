@@ -214,6 +214,9 @@ path.ranking {
     #topBody tr {
         cursor: pointer;
         &:hover {
+            background: #e6e6e6!important;
+        }
+        &.wanna-members {
             background: #eee;
         }
     }
@@ -221,9 +224,6 @@ path.ranking {
     td {
         padding: 5px 15px;
         border-bottom: 1px solid #ccc;
-        &:hover{
-            background: #eee;
-        }
     }
 
     th {

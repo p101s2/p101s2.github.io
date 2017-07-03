@@ -1,39 +1,39 @@
-Name,Company,Level Audition,Re-Evaluation,note,ep1,ep2,ep3,ep5,ep6,ep8,ep10
-Park Ji Hoon,Maroo Entertainment,C,B,,1,1,1,1,3,3,2
+Name,Company,Level Audition,Re-Evaluation,note,ep1,ep2,ep3,ep5,ep6,ep8,ep10,ep11
+Park Ji Hoon,Maroo Entertainment,C,B,,1,1,1,1,3,3,2,2
 Jang Moon Bok,ONO Entertainment,F,F,,2,5,8,14,26,32,27
-Lee Dae Hwi,Brand New Music,A,A,,3,3,2,7,10,4,10
-Joo Hak Nyeon,Cre.Ker Entertainment,F,F,,4,8,6,10,9,10,18
-Bae Jin Young,C9 Entertainment,C,F,,5,12,10,12,14,12,4
-Kim Samuel,Brave Entertainment,A,A,,6,2,3,2,17,16,5
-Ahn Hyeong Seop,Yuehua Entertainment,D,A,,7,7,5,7,20,19,14
-Ong Seong Woo,Fantagio,A,A,,8,4,4,4,6,7,8
+Lee Dae Hwi,Brand New Music,A,A,,3,3,2,7,10,4,10,3
+Joo Hak Nyeon,Cre.Ker Entertainment,F,F,,4,8,6,10,9,10,18,19
+Bae Jin Young,C9 Entertainment,C,F,,5,12,10,12,14,12,4,10
+Kim Samuel,Brave Entertainment,A,A,,6,2,3,2,17,16,5,18
+Ahn Hyeong Seop,Yuehua Entertainment,D,A,,7,7,5,7,20,19,14,16
+Ong Seong Woo,Fantagio,A,A,,8,4,4,4,6,7,8,5
 Lee Eui Woong,Yuehua Entertainment,C,D,,9,10,14,17,25,23,23
-Lai Kuan Lin,Cube Entertainment,D,F,,10,6,7,9,5,2,20
-Hwang Min Hyun,Pledis Entertainment,C,D,,11,9,16,11,4,6,11
+Lai Kuan Lin,Cube Entertainment,D,F,,10,6,7,9,5,2,20,7
+Hwang Min Hyun,Pledis Entertainment,C,D,,11,9,16,11,4,6,11,9
 Park Sung Woo,HIM Entertainment,F,F,,12,13,17,22,31,37,-
-Jung Sae Woon,Starship Entertainment,B,B,,13,17,11,13,15,17,19
-Choi Min Ki,Pledis Entertainment,D,F,,14,15,19,19,18,20,15
-Kim Jong Hyun,Pledis Entertainment,D,B,,15,11,13,8,1,1,7
+Jung Sae Woon,Starship Entertainment,B,B,,13,17,11,13,15,17,19,12
+Choi Min Ki,Pledis Entertainment,D,F,,14,15,19,19,18,20,15,20
+Kim Jong Hyun,Pledis Entertainment,D,B,,15,11,13,8,1,1,7,14
 Kwon Hyun Bin,YGKPlus,F,F,,16,20,22,23,33,34,22
 Lee Gun Hee,Rainbow Bridge World,D,D,,17,24,27,29,29,30,33
 Justin Huang,Yuehua Entertainment,C,D,,18,21,26,31,48,43,-
-Kang Dong Ho,Pledis Entertainment,D,D,,19,14,20,20,8,11,12
+Kang Dong Ho,Pledis Entertainment,D,D,,19,14,20,20,8,11,12,13
 Lee Woo Jin,Media Line Entertainment,B,A,,20,22,21,18,22,26,34
 Takada Kenta,Star Road Entertainment,C,B,,21,25,29,28,24,31,24
-Yoo Seon Ho,Cube Entertainment,F,F,,22,16,15,15,11,13,16
-Kang Daniel,MMO Entertainment,B,A,,23,23,12,5,2,8,1
-Im Young Min,Brand New Music,B,A,,24,27,31,27,12,5,17
+Yoo Seon Ho,Cube Entertainment,F,F,,22,16,15,15,11,13,16,17
+Kang Daniel,MMO Entertainment,B,A,,23,23,12,5,2,8,1,1
+Im Young Min,Brand New Music,B,A,,24,27,31,27,12,5,17,15
 Yoon Hee Seok,Jellyfish Entertainment,F,B,,25,26,32,30,45,46,-
 Kim Tae Min,Han Ahreum Company,F,F,Withdrew for Health Reasons,26,33,30,32,37,-,-
-Kim Jae Hwan,Independent,B,B,,27,18,18,16,7,9,13
+Kim Jae Hwan,Independent,B,B,,27,18,18,16,7,9,13,4
 Kim Tae Woo,Narda Entertainment,F,D,,28,34,44,38,49,49,-
 Hong Eun Ki,GON Entertainment,C,D,,29,31,41,36,38,38,-
 Lee Jun Woo,F.ENT,F,C,,30,36,33,41,58,50,-
 Jung Jung,Yuehua Entertainment,C,D,,31,29,42,50,57,51,-
 Yeo Hwan Ung,Rainbow Bridge World,B,B,,32,32,39,49,54,42,-
 Lee In Soo,Independent,C,B,,33,30,43,57,56,57,-
-Ha Sung Woon,Ardor and Able,A,A,,34,28,23,21,27,25,3
-Yoon Ji Sung,MMO Entertainment,F,D,,35,19,9,3,13,15,9
+Ha Sung Woon,Ardor and Able,A,A,,34,28,23,21,27,25,3,11
+Yoon Ji Sung,MMO Entertainment,F,D,,35,19,9,3,13,15,9,8
 Jeong Hyo Jun,YGKPlus,F,F,,36,44,54,67,-,-,-
 Kim Tae Dong,The Vibe Label,F,A,,37,45,28,25,28,22,30
 Choi Dong Ha,Independent,C,B,,38,35,51,63,-,-,-
@@ -70,7 +70,7 @@ Choi Hee Soo,I.ONE Entertainment,F,F,,68,79,79,96,-,-,-
 Kim Seong Lee,C2K Entertainment,B,A,,69,60,53,46,51,47,-
 Choi Seung Hyuk,Yuehua Entertainment,D,D,,70,76,64,79,-,-,-
 Kim Ye Hyeon,Widmay Entertainment,F,C,,71,93,34,40,55,33,32
-Park Woo Jin,Brand New Music,A,A,,72,75,38,24,16,14,6
+Park Woo Jin,Brand New Music,A,A,,72,75,38,24,16,14,6,6
 Choi Ha Don,The Jackie Chan Group Korea,D,F,,73,86,91,85,-,-,-
 Choi Jae Woo,Rainbow Bridge World,C,B,,74,94,80,97,-,-,-
 Kim Nam Hyung,S.how Entertainment,A,A,,75,58,46,54,47,52,-
