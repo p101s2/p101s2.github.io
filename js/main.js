@@ -93,7 +93,8 @@ function isEliminated(d) {
 // Sorts an array of objects by key
 function sortByKey(array, key, asc) {
     return array.sort(function(a, b) {
-        var x = a[key]; var y = b[key];
+        var x = a[key];
+        var y = b[key];
         if (asc) {
             if (x == "-") {
                 return 1;
@@ -103,27 +104,29 @@ function sortByKey(array, key, asc) {
             }
             return ((x < y) ? -1 : ((x > y) ? 1 : 0));
         }
+        if (y == "-") {
+            return -1;
+        }
         return ((x < y) ? 1 : ((x > y) ? -1 : 0));
     });
 }
 
 // Sort chart by key
 function toggleSort(key) {
-    if ($("#" + key).hasClass("selectedSort")) { // Toggle on this key
-        sortAsc = !sortAsc;
-    } else { // Sort true
+    var sortAsc = $("#" + key).data("asc");
+    // Select this key if needed
+    if (!$("#" + key).hasClass("selectedSort")) {
         $("#top th").removeClass("selectedSort");
         $("#" + key).addClass("selectedSort");
-        sortKey = key
-        sortAsc = true;
     }
-    showChart(key, sortAsc);
+    $("#" + key).data("asc", !sortAsc); // Toggle sort
+    showChart(key, !sortAsc);
 }
 
 // Update chart
 function showChart(key, asc) {
     var sortedData = sortByKey(totalData, key, asc);
-
+    console.log(sortedData);
     var top = d3.select("#topBody");
 
     top.selectAll("tr.top").remove();

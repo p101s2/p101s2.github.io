@@ -50,11 +50,11 @@
             <table id="top">
                 <thead>
                     <tr class="smallCaps">
-                        <th onclick="toggleSort('latestRank')" id="latestRank" class="selectedSort">Rank</th>
-                        <th onclick="toggleSort('name')" id="name">Name</th>
-                        <th onclick="toggleSort('company')" id="company">Company</th>
-                        <th onclick="toggleSort('letter')" id="letter">Class</th>
-                        <th onclick="toggleSort('rankChange')" id="rankChange">Change</th>
+                        <th onclick="toggleSort('latestRank')" id="latestRank" class="selectedSort" data-asc="true">Rank</th>
+                        <th onclick="toggleSort('name')" id="name" data-asc="false">Name</th>
+                        <th onclick="toggleSort('company')" id="company" data-asc="false">Company</th>
+                        <th onclick="toggleSort('letter')" id="letter" data-asc="false">Class</th>
+                        <th onclick="toggleSort('rankChange')" id="rankChange" data-asc="false">Change</th>
                     </tr>
                 </thead>
                 <tbody id="topBody">
